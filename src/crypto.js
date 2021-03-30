@@ -7,6 +7,10 @@
 // BROWSER POLYFILL
 var crypto = require('./node_polyfills.js').crypto;
 
+if (crypto.default) {
+  crypto = crypto.default;
+}
+
 var Curve = require('./Curve.js');
 var util = require('./helpers.js');
 
