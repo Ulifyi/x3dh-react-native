@@ -18,9 +18,7 @@ You can read more about the signal protocol
 
 ## Usage
 
-There are two ways to use this package.
-
-You can require with your front-end bundler of choice (e.g. browserify, webpack):
+This package is not hosted on npm yet so to try it with React Native you can use [wml](https://github.com/wix/wml) to add this directory to your `node_modules` folder. You can then use it like:
 
 ```js
 var signal = require('signal-protocol')
@@ -36,6 +34,8 @@ be signed.
 
 At install time, clients generate a single signed PreKey, as well as a large
 list of unsigned PreKeys, and transmit all of them to the server.
+
+Please note that before running any command that involved `crypto.getRandomValues` you must first call and await `KeyHelper.ensureSecure` (see [isomorphic-webcrypto](https://github.com/kevlened/isomorphic-webcrypto)) for more details.
 
 ```js
 var signal = require('signal-protocol')
