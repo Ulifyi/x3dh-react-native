@@ -1,6 +1,5 @@
 'use strict';
 
-var Crypto = require('crypto');
 var CurveWrapper = require('./curve25519_wrapper.js');
 
 function validatePrivKey(privKey) {
@@ -82,35 +81,10 @@ function wrapCurve25519(curve25519) {
   };
 }
 
-function wrapCurve(curve) {
-  return {
-    generateKeyPair: function() {
-      var privKey = Crypto.crypto.getRandomBytes(32);
-      return curve.createKeyPair(privKey);
-    },
-    createKeyPair: function(privKey) {
-      return curve.createKeyPair(privKey);
-    },
-    calculateAgreement: function(pubKey, privKey) {
-      return curve.ECDHE(pubKey, privKey);
-    },
-    verifySignature: function(pubKey, msg, sig) {
-      return curve.Ed25519Verify(pubKey, msg, sig);
-    },
-    calculateSignature: function(privKey, message) {
-      return curve.Ed25519Sign(privKey, message);
-    }
-  };
-}
-
 var curve = wrapCurve25519(CurveWrapper.curve25519);
 var async = wrapCurve25519(CurveWrapper.curve25519_async);
-var libsignal_Curve = wrapCurve(curve);
-var libsignal_Curve_async = wrapCurve(async);
 
 module.exports = {
   Curve:                 curve,
   async:                 async,
-  libsignal_Curve:       libsignal_Curve,
-  libsignal_Curve_async: libsignal_Curve_async
 };

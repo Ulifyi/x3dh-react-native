@@ -1,10 +1,10 @@
 var VERSION = 0;
 
 var Crypto = require('./crypto.js');
-var dcodeIO = require('../build/dcodeIO.js');
+var ByteBuffer = require('bytebuffer');
 
 function iterateHash(data, key, count) {
-  data = dcodeIO.ByteBuffer.concat([data, key]).toArrayBuffer();
+  data = ByteBuffer.concat([data, key]).toArrayBuffer();
   return Crypto.crypto.hash(data).then(function(result) {
     if (--count === 0) {
       return result;

@@ -1,8 +1,5 @@
-
-var WebCrypto = require('node-webcrypto-ossl');
-crypto = new WebCrypto();
+var crypto = require('isomorphic-webcrypto');
 
 module.exports = {
   crypto: crypto,
-  Worker: require('tiny-worker')
 };

@@ -5,6 +5,10 @@ function isNonNegativeInteger(n) {
 }
 
 var KeyHelper = {
+    ensureSecure: function () {
+        return Crypto.crypto.ensureSecure();
+    },
+
     generateIdentityKeyPair: function() {
         return Crypto.crypto.createKeyPair();
     },

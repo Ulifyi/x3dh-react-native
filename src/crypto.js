@@ -5,25 +5,18 @@
 
 
 // BROWSER POLYFILL
-var crypto = null;
-try {
-  crypto = window.crypto;
-} catch (e) {
-  crypto = require('./node_polyfills.js').crypto;
-}
+var crypto = require('./node_polyfills.js').crypto;
 
 var Curve = require('./Curve.js');
 var util = require('./helpers.js');
-var dcodeIO = require('../build/dcodeIO.js');
-
-if (!crypto || !crypto.subtle || typeof crypto.getRandomValues !== 'function') {
-  throw new Error('WebCrypto not found, and node-webcrypto-ossl not imported!');
-}
 
 // object for this crypto.js scope
 var myCrypto = {};
 
 myCrypto.crypto = {
+  ensureSecure: function(){
+      return crypto.ensureSecure();
+  },
   getRandomBytes: function(size) {
     var array = new Uint8Array(size);
     crypto.getRandomValues(array);
