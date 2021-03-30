@@ -1,36 +1,20 @@
-# signal-protocol
-
-[![Build Status](https://travis-ci.org/elsehow/signal-protocol.svg?branch=master)](https://travis-ci.org/elsehow/signal-protocol)
-[![Dependencies](https://david-dm.org/elsehow/signal-protocol/status.svg)](https://david-dm.org/elsehow/signal-protocol)
-[![DevDependencies](https://david-dm.org/elsehow/signal-protocol/dev-status.svg)](https://david-dm.org/elsehow/signal-protocol?type=dev)
-
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/elsehow.svg)](https://saucelabs.com/u/elsehow)
-
+# signal-protocol for React Native
 
 A ratcheting forward secrecy protocol that works in synchronous and
 asynchronous messaging environments.
 
-# THIS MODULE IS DEPRICATED
-
-I recommend you use [@wireapp/proteus](https://www.npmjs.com/package/@wireapp/proteus).
 
 *All code in this repository is FOR RESEARCH PURPOSES ONLY!*
 
 ---
 
-This repository is forked from WhisperSystem's own [libsignal-protocol-javascript](https://github.com/WhisperSystems/libsignal-protocol-javascript) by **[@liliakai](https://github.com/liliakai)**, modified to support node and the browser. I use [node-webcrypto-ossl](https://github.com/PeculiarVentures/node-webcrypto-ossl) as a drop-in native replacement for WebCrypto API.
+This repository is based on WhisperSystem's own [libsignal-protocol-javascript](https://github.com/WhisperSystems/libsignal-protocol-javascript) by **[@liliakai](https://github.com/liliakai)**, modified to support node and the browser. I use [node-webcrypto-ossl](https://github.com/PeculiarVentures/node-webcrypto-ossl) as a drop-in native replacement for WebCrypto API.
 
 **WARNING: This code has NOT been reviewed by an experienced cryptographer. IT IS FOR RESEARCH ONLY!!!!!**
 
 You can read more about the signal protocol 
 (formerly /axolotl/ for its self-healing abilities)
 [here](https://whispersystems.org/blog/advanced-ratcheting/).
-
-## Install
-
-```sh
-npm install signal-protocol
-```
 
 ## Usage
 
@@ -41,10 +25,6 @@ You can require with your front-end bundler of choice (e.g. browserify, webpack)
 ```js
 var signal = require('signal-protocol')
 ```
-
-**IMPT NOTE!!!** If you intend to call this from the browser, have your bundler exclude `src/node_polyfills.js`. You won't need that file for your browser bundles, and it could crash your bundler. (Even at best, it will add tons of useless junk to your bundled js file).
-
-Or, you can include the prebundled `dist/libsignal.js` in your HTML file.
 
 The following steps will walk you through the lifecycle of the signal protocol
 
