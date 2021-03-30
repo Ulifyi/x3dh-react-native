@@ -8,7 +8,7 @@ asynchronous messaging environments.
 
 ---
 
-This repository is based on WhisperSystem's own [libsignal-protocol-javascript](https://github.com/WhisperSystems/libsignal-protocol-javascript) by **[@liliakai](https://github.com/liliakai)**, modified to support node and the browser. I use [node-webcrypto-ossl](https://github.com/PeculiarVentures/node-webcrypto-ossl) as a drop-in native replacement for WebCrypto API.
+This repository is based on WhisperSystem's own [libsignal-protocol-javascript](https://github.com/WhisperSystems/libsignal-protocol-javascript) by **[@liliakai](https://github.com/liliakai)**, modified to support react native. I use [isomorphic-webcrypto](https://github.com/kevlened/isomorphic-webcrypto) as a drop-in replacement for WebCrypto API.
 
 **WARNING: This code has NOT been reviewed by an experienced cryptographer. IT IS FOR RESEARCH ONLY!!!!!**
 
