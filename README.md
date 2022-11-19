@@ -1,4 +1,8 @@
-# signal-protocol for React Native
+# React Native Signal Protocol
+
+> A fork of AidenRourke's [signal-protocol](https://github.com/AidenRourke/signal-protocol)
+
+> Make sure to call `await`
 
 A ratcheting forward secrecy protocol that works in synchronous and
 asynchronous messaging environments.
@@ -8,25 +12,19 @@ asynchronous messaging environments.
 
 ---
 
+### Usage:
+
+```javascript
+import signal from 'signal-protocol-react-native';
+```
+
 This repository is based on WhisperSystem's own [libsignal-protocol-javascript](https://github.com/signalapp/libsignal-protocol-javascript), modified to support react native. I use [isomorphic-webcrypto](https://github.com/kevlened/isomorphic-webcrypto) as a drop-in replacement for WebCrypto API.
 
 **WARNING: This code has NOT been reviewed by an experienced cryptographer. IT IS FOR RESEARCH ONLY!!!!!**
 
-You can read more about the signal protocol 
-(formerly /axolotl/ for its self-healing abilities)
-[here](https://whispersystems.org/blog/advanced-ratcheting/).
-
-## Usage
-
-This package is not hosted on npm yet so to try it with React Native you can use [wml](https://github.com/wix/wml) to add this directory to your `node_modules` folder. You can then use it like:
-
-```js
-var signal = require('signal-protocol')
-```
-
 The following steps will walk you through the lifecycle of the signal protocol
 
-### Generate an indentity + PreKeys
+### Generate an identity + PreKeys
 
 This protocol uses a concept called 'PreKeys'. A PreKey is an ECPublicKey and
 an associated unique ID which are stored together by a server. PreKeys can also
@@ -37,8 +35,9 @@ list of unsigned PreKeys, and transmit all of them to the server.
 
 Please note that before running any command that involved `crypto.getRandomValues` you must first call and await `KeyHelper.ensureSecure` (see [isomorphic-webcrypto](https://github.com/kevlened/isomorphic-webcrypto)) for more details.
 
-```js
-var signal = require('signal-protocol')
+```javascript
+import signal from 'signal-protocol-react-native';
+
 var KeyHelper = signal.KeyHelper;
 
 var registrationId = KeyHelper.generateRegistrationId();

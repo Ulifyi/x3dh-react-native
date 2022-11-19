@@ -1,10 +1,10 @@
 {
-  "name": "signal-protocol",
-  "repository": "https://github.com/elsehow/signal-protocol",
-  "description": "the signal ratcheting forward secrecy protocol, for node and browsers",
-  "author": "elsehow",
+  "name": "signal-protocol-react-native",
+  "repository": "https://github.com/PopBot/signal-protocol-react-native",
+  "description": "React Native adaptation of Signal Protocol",
+  "author": "PopBot",
   "contributors": [
-    "liliakai"
+    "PopBot"
   ],
   "version": "0.1.3",
   "main": "index.js",
