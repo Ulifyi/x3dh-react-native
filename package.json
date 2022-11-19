@@ -11,6 +11,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "bytebuffer": "^5.0.1",
+    "expo-random": "^13.0.0",
     "isomorphic-webcrypto": "^2.3.8",
     "protobufjs": "^5.0.1"
   }
