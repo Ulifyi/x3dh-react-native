@@ -4,13 +4,15 @@
 
 > Make sure to call `await`
 
-A ratcheting forward secrecy protocol that works in synchronous and
-asynchronous messaging environments.
 
+### Installation
 
-*All code in this repository is FOR RESEARCH PURPOSES ONLY!*
+Install [Expo-CLI](https://docs.expo.dev/get-started/installation/) first.
 
----
+```shell
+npm install signal-protocol-react-native
+expo install expo-crypto expo-random
+```
 
 ### Usage:
 
@@ -33,7 +35,7 @@ be signed.
 At install time, clients generate a single signed PreKey, as well as a large
 list of unsigned PreKeys, and transmit all of them to the server.
 
-Please note that before running any command that involved `crypto.getRandomValues` you must first call and await `KeyHelper.ensureSecure` (see [isomorphic-webcrypto](https://github.com/kevlened/isomorphic-webcrypto)) for more details.
+Please note that before running any command that involved `crypto.getRandomValues` you must first call and **await** `KeyHelper.ensureSecure` (see [isomorphic-webcrypto](https://github.com/kevlened/isomorphic-webcrypto)) for more details.
 
 ```javascript
 import signal from 'signal-protocol-react-native';
