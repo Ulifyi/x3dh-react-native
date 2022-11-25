@@ -1,4 +1,5 @@
-import './components_concat';
+import ProtoBuf from './components_concat';
+
 
 var Internal = Internal || {};
 
@@ -46,7 +47,7 @@ module.exports = function protobuf() {
   var protobufjs = require('protobufjs');
 
   function loadProtoBufs(filename) {
-    return protobufjs.loadProto(Internal.protoText['protos/' + filename]).build('textsecure');
+    return ProtoBuf.loadProto(Internal.protoText['protos/' + filename]).build('textsecure');
   }
 
   var protocolMessages = loadProtoBufs('WhisperTextProtocol.proto');
