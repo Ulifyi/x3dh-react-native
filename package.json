@@ -6,14 +6,18 @@
   "contributors": [
     "PopBot"
   ],
-  "version": "0.1.10",
+  "version": "0.1.11",
   "main": "index.js",
   "license": "GPL-3.0",
   "dependencies": {
     "expo-crypto": "^10.2.0",
-    "expo-random": "12.2.0",
+    "expo-random": "^12.2.0",
     "isomorphic-webcrypto": "*",
     "protobufjs": "*",
-    "react-native-securerandom": "*"
+    "react-native-securerandom": "*",
+    "path": "*",
+    "long": "*",
+    "bytebuffer": "*",
+    "react-native-fs": "*"
   }
 }

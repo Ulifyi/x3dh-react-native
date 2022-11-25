@@ -15,6 +15,7 @@
  limitations under the License.
  */
 
+
 /**
  * @license long.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
  * Released under the Apache License, Version 2.0
@@ -1566,7 +1567,7 @@
             } else if (Object.prototype.toString.call(buffer) === "[object Array]") { // Create from octets
                 bb = new ByteBuffer(buffer.length, littleEndian, noAssert);
                 bb.limit = buffer.length;
-                for (i=0; i<buffer.length; ++i)
+                for (let i=0; i <buffer.length; ++i)
                     bb.view.setUint8(i, buffer[i]);
             } else
                 throw TypeError("Illegal buffer"); // Otherwise fail
@@ -1583,7 +1584,7 @@
          * @expose
          */
         ByteBufferPrototype.writeInt8 = function(value, offset) {
-            var relative = typeof offset === 'undefined';
+            let relative = typeof offset === 'undefined';
             if (relative) offset = this.offset;
             if (!this.noAssert) {
                 if (typeof value !== 'number' || value % 1 !== 0)
@@ -4855,7 +4856,7 @@
             if (callback && typeof callback != 'function')
                 callback = null;
             if (Util.IS_NODE) {
-                var fs = require("fs");
+                var fs = require("react-native-fs");
                 if (callback) {
                     fs.readFile(path, function(err, data) {
                         if (err)

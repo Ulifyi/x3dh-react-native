@@ -1,3 +1,5 @@
+import './components_concat';
+
 var Internal = Internal || {};
 
 Internal.protoText = function() {
